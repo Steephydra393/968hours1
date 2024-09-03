@@ -1,0 +1,120 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,650&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* Color Variables */
+:root {
+    --primary-green: #28a745;
+    --primary-red: #dc3545;
+    --hover-green: #0c4e1a;
+    --hover-red: #6e0f19;
+    --background-light: #f8f8f8;
+    --background-dark: #5c5c5c;
+}
+
+/* General Styling */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 0;
+    height: 100vh;
+    font-family: "Josefin Sans", sans-serif;
+    line-height: 1.6;
+}
+
+/* Section Styling */
+header, main, footer {
+    text-align: center;
+    padding: .5rem;
+}
+
+header {
+    background-color: #aaaaaa;
+}
+
+main {
+    background-color: var(--background-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    background-color: var(--background-dark);
+}
+
+/* Button Styling */
+.button {
+    padding: 40px 60px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    font-size: 2.5rem;
+    transition: background-color 0.3s;
+}
+
+.cin {
+    background-color: var(--primary-green);
+}
+
+.cout {
+    background-color: var(--primary-red);
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.cin:hover {
+    background-color: var(--hover-green);
+}
+
+.cout:hover {
+    background-color: var(--hover-red);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2rem;
+    }
+    .button {
+        font-size: 1.5rem;
+        padding: 25px 35px;
+    }
+}
+
+/* Flash Message Styling */
+.flash-popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+}
+
+.flash-popup.success {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+
+.flash-popup.error {
+    border-color: var(--primary-red);
+    color: var(--primary-red);
+}

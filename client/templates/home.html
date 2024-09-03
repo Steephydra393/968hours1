@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <title>Home</title>
+</head>
+<body>
+
+    <header class="div1">
+        <h2 class="logo"><i>CHRONOLOG</i></h2>
+    </header>
+
+    <main class="div2">
+        <div class="changing">
+            {% if logged_in %}
+                <p>You are logged in! Here is the special content for logged-in users.</p>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <div class="gridify">
+                    <div class="login">
+                        <a href="/login" class="cin">
+                            Log in
+                        </a>
+                    </div>
+                    <div class="leaderboard">
+
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </main>
+
+    <footer class="div3">
+        <p>2024 RAWC FRC Team 968</p>
+    </footer>
+
+    <!-- Flash message popup -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-popup" id="flashPopup" aria-live="polite">
+            {% for category, message in messages %}
+                <div class="{{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %}
+
+    <!-- JavaScript to show and hide the popup -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var flashPopup = document.getElementById('flashPopup');
+            if (flashPopup) {
+                flashPopup.style.display = 'block'; 
+                setTimeout(function () {
+                    flashPopup.style.display = 'none'; 
+                }, 3000); 
+            }
+        });
+    </script>
+
+</body>
+</html>

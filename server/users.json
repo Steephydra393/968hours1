@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "username": "123 123",
+        "school_id": "23414",
+        "password_hash": "scrypt:32768:8:1$76fBlR0X0EvTyMq3$2b699aa4aa8ab10fa2b1e41c5be523cc273e77915ee1f2f84d20807c6120146c3d711140caf9962dac822c9ed2c0f37eb6454b0eaad532e1c11a01dd7d9430fc",
+        "schoole": "2@2",
+        "personale": "2@5",
+        "phonenumber": "62646490282",
+        "role": "student"
+    },
+    {
+        "id": 2,
+        "username": "555",
+        "school_id": "55555",
+        "password_hash": "scrypt:32768:8:1$ORIRYZYJcr4DWHan$d890397c260e453e6eba0595287a22ca9ecbb5e8dbdf8879a1030ee0fd6eeb4e53eb13a0e7356a0aa0269e5d36a3953a35c320b601001fab182e56ced088f8e8",
+        "schoole": "555@555",
+        "personale": "555@666",
+        "phonenumber": "555555",
+        "role": "student"
+    }
+]

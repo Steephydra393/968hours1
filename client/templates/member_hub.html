@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <title>Home</title>
+</head>
+<body> <!-- Open the body tag here -->
+
+    <div class="div1">
+        <h2 class="logo"><i>CHRONOLOG</i></h2>
+    </div>
+
+    <div class="div2">
+        <div class="cin-cout">
+            <a href="/login" class="cin">
+                Clock In
+            </a>
+            <a href="/login" class="cout">
+                Clock Out
+            </a>
+        </div>
+
+    </div>
+
+    <div class="div3">
+        <p>2024 RAWC FRC Team 968</p>
+    </div>
+
+    <!-- Flash message popup -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-popup" id="flashPopup">
+            {% for category, message in messages %}
+                <div class="{{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %}
+
+    <!-- JavaScript to show and hide the popup -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var flashPopup = document.getElementById('flashPopup');
+            if (flashPopup) {
+                flashPopup.style.display = 'block'; // Show the popup
+                setTimeout(function () {
+                    flashPopup.style.display = 'none'; // Hide the popup after 3 seconds
+                }, 3000); // Adjust the timeout duration as needed (3000 milliseconds = 3 seconds)
+            }
+        });
+    </script>
+
+</body> <!-- Close the body tag here -->
+</html>
